@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/layout :: head">
-  <meta charset="UTF-8">
   <title>Edit</title>
 </head>
 <body>
@@ -11,11 +10,11 @@
     <input type="text" th:field="*{id}" hidden>
     <table id="blogs">
       <tr>
-        <th>Author</th>
+        <th>Tác giả</th>
         <td><input type="text" th:field="*{author}" th:value="*{author}"></td>
       </tr>
       <tr>
-        <th>Blog Name</th>
+        <th>Title</th>
         <td><input type="text" th:field="*{title}" th:value="*{title}"></td>
       </tr>
       <tr>

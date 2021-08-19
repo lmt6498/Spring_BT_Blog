@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -23,7 +24,6 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
-import repository.BlogRepo;
 import repository.IBlogRepo;
 import services.BlogServices;
 
@@ -35,6 +35,7 @@ import java.util.Properties;
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
+@EnableJpaRepositories("repository")
 @ComponentScan("controllers")
 public class ApplicationConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
@@ -125,11 +126,6 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     return transactionManager;
 }
 
-
-    @Bean
-    public IBlogRepo iProducRepo(){
-        return new BlogRepo();
-    }
 
     @Bean
     public BlogServices productService(){

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/layout :: head">
-  <meta charset="UTF-8">
   <title>Create</title>
 </head>
 <body>
@@ -10,7 +9,7 @@
   <form action="/create" method="post" th:object="${blog}">
     <table id="blogs">
       <tr>
-        <th>Author</th>
+        <th>Tác giả</th>
         <td><input type="text" th:field="*{author}"></td>
       </tr>
       <tr>
